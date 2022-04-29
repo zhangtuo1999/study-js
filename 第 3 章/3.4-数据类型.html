@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      //   let a;
+      //   console.log(typeof a);
+      //   console.log(typeof b);
+
+      // console.log(undefined == null);
+      // console.log(undefined === null);
+
+      //   let num = 078;
+      //   console.log(num); //62
+
+      //   let num = 10000001;
+      //   console.log(num);     //1e-7
+
+      //   let num = 2 * Infinity;
+      //   console.log(isFinite(num));
+
+      // console.log(0/0);
+      // console.log(-0/+0);
+
+      //   console.log(1 / 0);
+      //   console.log(-1 / 0);
+      //   console.log(isNaN(true));
+      //   console.log(isNaN(false));
+      //   console.log(isNaN("10"));
+      //   console.log(isNaN("1.4"));
+      //   console.log(isNaN(2));
+      //   console.log(isNaN("1true"));
+      //   console.log(isNaN("true"));
+
+      // console.log(Number('0o11'));
+      //   console.log(0o12);
+
+      //     let num = 076;
+      // console.log(num);     	// 62
+      //     let num = 0o79;
+      //   console.log(num);     	// 62
+      //   console.log(parseInt(""));
+      //   console.log(parseInt("1234blue"));
+      // console.log(parseInt('073',8));
+      // console.log(parseFloat('   1.9'));
+
+      // console.log('   \b');
+      // let num =10
+      // console.log(num.toString(10));
+      // console.log(num.toString(8));
+      // console.log(num.toString(16));
+      // console.log(num.toString(2));
+      // let a = true;
+      // let b = 10;
+      // console.log(a.toString());
+      // console.log(b.toString());
+      // let num = 10;
+      // console.log(num + "");
+
+      // let pageHtml = `
+      // <div>
+      //   <span></span>
+      // </div>
+      // `
+      // let num
+      // let sum = 2;
+      // let stirng = `${num} + ${num} = ${sum}`;
+      // console.log(stirng);
+      // const s = Symbol()
+      // console.log(s);
+
+      // let s1 = Symbol("foo");
+      // let s2 = Symbol("foo");
+      // console.log(s1 === s2);
+
+      // let fooSymbol = Symbol("foobar");
+      // let barSymbol = Symbol.for("foobar");
+      // console.log(fooSymbol === barSymbol);
+
+      // console.log(Symbol.keyFor(barSymbol));
+
+      let s1 = Symbol("foo");
+      let s2 = Symbol("bar");
+      let obj = {
+        [s1]: "foo val",
+      };
+      obj[s2]='bar val'
+      console.log(obj);
+    </script>
+  </body>
+</html>
