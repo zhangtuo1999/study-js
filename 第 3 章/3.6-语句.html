@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      // const obj = {
+      //   a: 1,
+      //   b: 2,
+      //   c: 3,
+      //   [Symbol("foo")]: 'foo',
+      // };
+      // for (let prop in obj) {
+      //   console.log(prop, obj[prop]);
+      // }
+
+      //   const nums = [1, 2, 3];
+      //   for (const item of nums) {
+      //       console.log(item);
+      //   }
+
+      //   let count = 0;
+      //   start:
+      //   for (let i = 1; i < 10; i++) {
+      //     for (let j = 1; j < 10; j++) {
+      //       if (j % 5 === 0) continue start;
+      //       console.log(i, j);
+      //     }
+      //   }
+      //   console.log(count);
+
+      //   flag: for (let i = 1; i < 10; i++) {
+      //     for (let j = 1; j < 10; j++) {
+      //       if (j % 5 === 0) continue flag;
+      //       console.log(i, j);
+      //     }
+      //   }
+
+      const obj = {
+        a: 1,
+        b: 2,
+        c: 3,
+        d: 4,
+      };
+      with (obj) {
+        console.log(a);
+        console.log(b);
+        console.log(c);
+        let d = 400
+        console.log(d);
+        console.log(e); //报错
+      }
+    </script>
+  </body>
+</html>
