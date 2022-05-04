@@ -113,5 +113,75 @@
 
 // console.log(posArr);
 
+// let s = 'foobarfoo'
+// console.log(s.includes('bar'));
 
+// let s1 = "    foobar ";
+// let s2 = s1.trim();
+// console.log(s1);    // 不改变原字符串
+// console.log(s2);    // foobar
 
+// let s = 'foo'
+// console.log(s.repeat(1));   // foofoofoofoofoo
+
+// let s = "foo";
+// let s1 = s.padStart(10, "bar");
+// console.log(s1);                // barbarbfoo
+// let s2 = s.padEnd(10, "bar");
+// console.log(s2);                // foobarbarb
+
+// let string = "abcde";
+// let strIter = string[Symbol.iterator]();
+// console.log(strIter.next()); // { value: 'a', done: false }
+// console.log(strIter.next()); // { value: 'b', done: false }
+// console.log(strIter.next()); // { value: 'c', done: false }
+// console.log(strIter.next()); // { value: 'd', done: false }
+// console.log(strIter.next()); // { value: 'e', done: false }
+// console.log(strIter.next()); // { value: undefined, done: true }
+
+// let string = "abcde";
+// for (const s of string) {
+//   console.log(s);
+// }
+
+// let string = "abcde";
+// // console.log([...string]);   // [ 'a', 'b', 'c', 'd', 'e' ]
+
+// console.log(string[1]);
+
+// const paragraph = 'The quick brown fox jumps over the lazy dog. It barked.';
+// const regex = /[A-Z]/g;
+// const found = paragraph.match(regex);
+// console.log(found);     // [ 'T', 'I' ]
+
+// const paragraph = "the Quick brown fox jumps over the lazy dog. It barked.";
+
+// const regex = /[A-Z]/g;
+
+// const found = paragraph.search(regex);
+
+// console.log(found);     // 4
+
+// const p = 'The quick brown fox jumps over the lazy dog. If the dog reacted, was it really lazy?';
+
+// // console.log(p.replace('dog', 'monkey'));
+// // // expected output: "The quick brown fox jumps over the lazy monkey. If the dog reacted, was it really lazy?"
+
+// const regex = /dog/g;
+// console.log(p.replace(regex, 'ferret'));
+// // expected output: "The quick brown fox jumps over the lazy ferret. If the dog reacted, was it really lazy?"
+
+// const str = "The quick brown fox";
+
+// const words = str.split(" ");
+// console.log(words);             // [ 'The', 'quick', 'brown', 'fox' ]
+
+// const chars = str.split("");
+// console.log(chars[8]);          // k
+
+// const strCopy = str.split();
+// console.log(strCopy);           // [ 'The quick brown fox' ]
+
+const s1 = 'abcd'
+const s2 = 'abc'
+console.log(s1.localeCompare(s2));  // 1
