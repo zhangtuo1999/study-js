@@ -91,6 +91,30 @@
       // };
       // obj[s2]='bar val'
       // console.log(obj);
+
+      // let num = 0o78
+      // console.log(num);
+
+      // let num1 = 043;
+      // let num2 = 032;
+      // console.log(num1, num2);  // 35 26
+      // console.log(num1 + num2); // 61
+
+      // console.log(+0 === -0);
+
+      // let num = 1.0;
+      // console.log(num); // 1
+
+      // let num = 2 * Infinity;
+      // console.log(isFinite(num)); // false
+
+      // console.log(parseInt('0o12'));
+      //       let fooSymbol = Symbol.for('foobar')
+      // console.log(fooSymbol);
+
+      let fooSymbol = Symbol.for("foobar"); // 创建新符号
+      let barSymbol = Symbol.for("foobar"); // 返回已有的符号
+      console.log(fooSymbol === barSymbol);
     </script>
   </body>
 </html>
