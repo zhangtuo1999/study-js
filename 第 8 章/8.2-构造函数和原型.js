@@ -2,7 +2,7 @@
  * @Author: ZhangTuo 13120409722@163.com
  * @Date: 2022-05-09 09:10:38
  * @LastEditors: ZhangTuo 13120409722@163.com
- * @LastEditTime: 2022-05-09 22:59:42
+ * @LastEditTime: 2022-05-10 12:04:26
  * @FilePath: \study-js\第 8 章\8.2-构造函数和原型.js
  * @Description:
  */
@@ -127,3 +127,87 @@
 // Person.prototype.age = 18;
 // const person = new Person();
 // console.log("age" in person && !person.hasOwnProperty("age"));
+
+// function Person() {
+//   this.name = "foo";
+// }
+// Person.prototype.age = 18;
+// const p = new Person();
+// for (const key in p) {
+//   console.log(key, p[key]);
+// }
+// p.addr = "bar";
+// console.log(Object.keys(p));
+
+// function Person() {
+//   this.name = "foo";
+// }
+// Person.prototype.age = 18;
+// const p = new Person();
+// console.log(Object.getOwnPropertyNames(p.__proto__));
+
+// const obj = {
+//   [Symbol("foo")]: "foo",
+//   [Symbol("bar")]: "bar",
+// };
+
+// console.log(Object.getOwnPropertySymbols(obj));
+
+// function Person() {
+//   this.name = "foo";
+// }
+
+// Person.prototype.age = 18;
+// const p = new Person();
+// p.addr = "bar";
+// console.log(Object.values(p));
+// console.log(Object.entries(p));
+
+// function Person() {}
+// console.log(Object.getOwnPropertyNames(Person.prototype));
+// console.log(Person.prototype.constructor);
+// Person.prototype = {
+//   name: "foo",
+//   addr: "bar",
+//   age: 18,
+// };
+// console.log(Object.getOwnPropertyNames(Person.prototype));
+// console.log(Person.prototype.constructor);
+// console.log(Person.prototype.constructor === Person.prototype.__proto__.constructor);
+
+// function Person() {}
+
+// Person.prototype = {
+//   constructor: Person,
+//   name: "foo",
+//   addr: "bar",
+//   age: 18,
+// };
+
+// const p = new Person();
+// console.log(p.__proto__ === Person.prototype); // true
+// console.log(p instanceof Person); // true
+// console.log(p.__proto__.constructor); // [Function: Object]
+
+// function Person() {}
+
+// Person.prototype = {
+//   name: "foo",
+//   addr: "bar",
+//   age: 18,
+// };
+
+// Object.defineProperty(Person.prototype, "constructor", {
+//   enumerable: false,
+//   value: Person,
+// });
+
+// function Person() {}
+// const p = new Person();
+// Person.prototype = {
+//   name: "foo",
+// };
+// console.log(p.name);
+
+console.log(Array.prototype.sort);
+console.log(String.prototype.substring);
