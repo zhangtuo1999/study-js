@@ -2,7 +2,7 @@
  * @Author: ZhangTuo 13120409722@163.com
  * @Date: 2022-05-10 20:37:02
  * @LastEditors: ZhangTuo 13120409722@163.com
- * @LastEditTime: 2022-05-11 17:24:36
+ * @LastEditTime: 2022-05-11 18:16:00
  * @FilePath: \study-js\第 8 章\8.4-类.js
  * @Description:
  */
@@ -286,37 +286,53 @@
 // }
 // class Teacher extends getSuperClass {}
 
-class Person {}
-let FooMixin = (SuperClass) =>
-  class extends SuperClass {
-    foo() {
-      console.log("foo");
-    }
-  };
+// class Person {}
+// let FooMixin = (SuperClass) =>
+//   class extends SuperClass {
+//     foo() {
+//       console.log("foo");
+//     }
+//   };
 
-let BarMixin = (SuperClass) =>
-  class extends SuperClass {
-    bar() {
-      console.log("bar");
-    }
-  };
+// let BarMixin = (SuperClass) =>
+//   class extends SuperClass {
+//     bar() {
+//       console.log("bar");
+//     }
+//   };
 
-let BazMixin = (SuperClass) =>
-  class extends SuperClass {
-    baz() {
-      console.log("baz");
-    }
-  };
+// let BazMixin = (SuperClass) =>
+//   class extends SuperClass {
+//     baz() {
+//       console.log("baz");
+//     }
+//   };
 
-function mix(BaseClass, ...Mixins) {
-  return Mixins.reduce(
-    (accumulator, current) => current(accumulator),
-    BaseClass
-  );
+// function mix(BaseClass, ...Mixins) {
+//   return Mixins.reduce(
+//     (accumulator, current) => current(accumulator),
+//     BaseClass
+//   );
+// }
+// class Teacher extends mix(Person, FooMixin, BarMixin, BazMixin) {}
+
+// const t = new Teacher();
+// t.foo();
+// t.bar();
+// t.baz();
+
+class Person {
+  foo() {
+    console.log("foo");
+  }
 }
-class Teacher extends mix(Person, FooMixin, BarMixin, BazMixin) {}
+
+class Teacher extends Person {
+  bar() {
+    super.foo();
+    console.log("bar");
+  }
+}
 
 const t = new Teacher();
-t.foo();
 t.bar();
-t.baz();
