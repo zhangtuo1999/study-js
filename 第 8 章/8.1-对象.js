@@ -261,3 +261,14 @@
 // });
 
 // console.log(Object.getOwnPropertyDescriptor(obj, "a"));
+
+const obj = {
+  year_: 2022,
+  get year() {
+    return this.year_;
+  },
+  set year(newVal) {
+    this.year_ = newVal;
+  },
+};
+console.log(obj);

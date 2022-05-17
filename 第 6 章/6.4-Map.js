@@ -104,9 +104,23 @@
 
 // console.log(m);
 
-const m = new Map().set("a", 1);
-for (let key of m.keys()) {
-  key = "b";
-  console.log(key, m.get("b")); 
+// const m = new Map().set("a", 1);
+// for (let key of m.keys()) {
+//   key = "b";
+//   console.log(key, m.get("b"));
+// }
+// console.log(m);
+
+// const map = new Map([
+//   ["a", 1],
+//   ["b", 2],
+// ]);
+// for (const [key, val] of map) {
+//   console.log(key, val);
+// }
+
+const arr = ["a", "b", "c"];
+const map = new Map(arr.map((element, index) => [index, element]));
+for (const [key, value] of map) {
+  console.log(key, value);
 }
-console.log(m); 
