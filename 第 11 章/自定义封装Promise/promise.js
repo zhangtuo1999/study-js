@@ -2,7 +2,7 @@
  * @Author: ZhangTuo 13120409722@163.com
  * @Date: 2022-05-24 16:23:30
  * @LastEditors: ZhangTuo 13120409722@163.com
- * @LastEditTime: 2022-05-25 11:55:17
+ * @LastEditTime: 2022-05-26 09:07:06
  * @FilePath: \study-js\第 11 章\自定义封装Promise\promise.js
  * @Description:
  */
@@ -30,8 +30,10 @@ function Promise(executor) {
     self.PromiseResult = data;
 
     // 调用 onResolved
-    self.callbacks.forEach((item) => {
-      item.onResolved(data);
+    setTimeout(() => {
+      self.callbacks.forEach((item) => {
+        item.onResolved(data);
+      });
     });
   }
 
@@ -46,8 +48,10 @@ function Promise(executor) {
     self.PromiseResult = data;
 
     // 调用 onRejected
-    self.callbacks.forEach((item) => {
-      item.onRejected(data);
+    setTimeout(() => {
+      self.callbacks.forEach((item) => {
+        item.onRejected(data);
+      });
     });
   }
 
@@ -66,14 +70,14 @@ Promise.prototype.then = function (onResolved, onRejected) {
   const self = this;
 
   // 判断是否传递了失败回调
-  if (typeof onRejected === "function") {
+  if (typeof onRejected !== "function") {
     onRejected = (reason) => {
       throw reason;
     };
   }
 
   // 判断是否传递了成功回调
-  if (typeof onResolved === "function") {
+  if (typeof onResolved !== "function") {
     onResolved = (value) => {
       return value;
     };
@@ -104,11 +108,15 @@ Promise.prototype.then = function (onResolved, onRejected) {
     }
     // 调用回调函数
     if (this.PromiseState === "fulfilled") {
-      callback(onResolved);
+      setTimeout(() => {
+        callback(onResolved);
+      });
     }
 
     if (this.PromiseState === "rejected") {
-      callback(onRejected);
+      setTimeout(() => {
+        callback(onRejected);
+      });
     }
 
     if (this.PromiseState === "pending") {
@@ -129,7 +137,7 @@ Promise.prototype.catch = function (onRejected) {
   return this.then(null, onRejected);
 };
 
-// 添加 resolve 实例方法
+// 添加 Promise.resolve 方法
 Promise.resolve = function (value) {
   return new Promise((resolve, reject) => {
     if (value instanceof Promise) {
@@ -147,9 +155,47 @@ Promise.resolve = function (value) {
   });
 };
 
-// 添加 reject 实例方法
+// 添加 Promise.reject 方法
 Promise.reject = function (value) {
   return new Promise((resolve, reject) => {
     reject(value);
+  });
+};
+
+// 添加 Promise.all 方法
+Promise.all = function (promises) {
+  return new Promise((resolve, reject) => {
+    let count = 0;
+    const results = [];
+    for (let i = 0; i < promises.length; i++) {
+      promises[i].then(
+        (v) => {
+          count++;
+          results[i] = v;
+          if (count === promises.length) {
+            resolve(results);
+          }
+        },
+        (r) => {
+          reject(r);
+        }
+      );
+    }
+  });
+};
+
+// 添加 Promise.race 方法
+Promise.race = function (promises) {
+  return new Promise((resolve, reject) => {
+    for (let i = 0; i < promises.length; i++) {
+      promises[i].then(
+        (v) => {
+          resolve(v);
+        },
+        (r) => {
+          reject(r);
+        }
+      );
+    }
   });
 };
