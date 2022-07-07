@@ -2,7 +2,7 @@
  * @Author: ZhangTuo 13120409722@163.com
  * @Date: 2022-05-26 15:54:14
  * @LastEditors: ZhangTuo 13120409722@163.com
- * @LastEditTime: 2022-07-06 17:32:43
+ * @LastEditTime: 2022-07-07 11:14:22
  * @FilePath: \study-js\第 12 章\12.1-window.js
  * @Description:
  */
@@ -65,3 +65,18 @@
 // if (res !== null) {
 //   console.log("hello " + res);
 // }
+
+
+// let qs = '?count=10&page=2';
+// let search = new URLSearchParams(qs);
+// console.log(search.has('count'));
+// console.log(search.get('page'));
+
+// for(let item of search){
+// //     console.log(item);
+// // }
+
+// history.go(1)
+// history.go(-1)
+
+// history.go('www.baidu.com')
